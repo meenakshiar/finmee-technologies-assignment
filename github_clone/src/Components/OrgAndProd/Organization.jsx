@@ -7,7 +7,7 @@ import {
 import React from 'react'
 import { BsCode } from 'react-icons/bs'
 
-
+// Organization component for rendering the trusted organizations section
 const Organization = () => {
     return (
         <>

@@ -50,3 +50,25 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .service_section{
+    gap: 20px;
+  }
+  .service__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    padding: 30px;
+  }
+  .service__img {
+    width: 108%;
+    justify-self: center;
+    order: 1;
+  }
+  .service__data {
+    width: 100%;
+    margin-bottom: 2%;
+    order: 2;
+  }
+}

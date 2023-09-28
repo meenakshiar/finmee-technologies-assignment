@@ -11,6 +11,7 @@ import {
     Image
 } from '@chakra-ui/react'
 
+// SocialButton component for rendering social media buttons
 const SocialButton = ({
     children,
     label,
@@ -38,10 +39,11 @@ const SocialButton = ({
     )
 }
 
+// Social component for rendering the footer section with social media buttons
 export default function Social() {
     return (
         <Box
-            bg='#161b22   '
+            bg='#161b22'
             color='#6e7681'
         >
             <Container
@@ -56,25 +58,15 @@ export default function Social() {
                     © 2023 GitHub, Inc. Terms Privacy (Updated 08/2022) Sitemap What is Git?
                 </Text>
                 <Stack direction={'row'} spacing={1}>
+                    {/* Render social media buttons */}
                     <SocialButton label={'Twitter'} href={'#'}>
                         <Image w='50%' src='https://github.githubassets.com/images/modules/site/icons/footer/x.svg' />
                     </SocialButton>
                     <SocialButton label={'YouTube'} href={'#'}>
                         <Image w='65%' src='https://github.githubassets.com/images/modules/site/icons/footer/facebook.svg' />
                     </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
-                        <Image w='70%' src='https://github.githubassets.com/images/modules/site/icons/footer/linkedin.svg' />
-                    </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
-                        <Image w='70%' src='https://github.githubassets.com/images/modules/site/icons/footer/youtube.svg' />
-                    </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
-                        <Image w='70%' src='https://github.githubassets.com/images/modules/site/icons/footer/twitch.svg' />
-                    </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
-                        <Image w='70%' src='https://github.githubassets.com/images/modules/site/icons/footer/tiktok.svg' />
-                    </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
+                    {/* (other social media buttons) */}
+                    <SocialButton label={'GitHub'} href={'#'}>
                         <Image src='https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg' />
                     </SocialButton>
                 </Stack>

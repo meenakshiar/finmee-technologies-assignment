@@ -1,6 +1,5 @@
-'use client'
-
 import {
+    // Import Chakra UI components
     Box,
     Flex,
     Text,
@@ -15,29 +14,38 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-} from '@chakra-ui/react'
+    InputGroup,
+    InputLeftElement,
+    Input,
+    InputRightElement,
+} from '@chakra-ui/react';
 import {
+    // Import Chakra UI icons
     HamburgerIcon,
     CloseIcon,
     ChevronDownIcon,
-    ChevronRightIcon,
-} from '@chakra-ui/icons'
-import { Image } from '@chakra-ui/react'
+    SearchIcon,
+} from '@chakra-ui/icons';
+import { BsGithub, BsSlashSquare } from 'react-icons/bs';
 
 export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure()
 
     return (
-        <Box bg='transparent'>
+        <Box
+            bg='transparent'
+            backgroundImage={
+                'url(https://github.githubassets.com/images/modules/site/home-campaign/hero-bg.webp)'
+            }
+            backgroundSize={'cover'}
+            backgroundPosition={'center center'}
+        >
             <Flex
                 bg='transparent'
-                // color={useColorModeValue('gray.600', 'white')}
                 minH={'60px'}
                 py={{ base: 2 }}
                 px={{ base: 4 }}
-                // borderBottom={1} 
                 borderStyle={'solid'}
-                // borderColor={useColorModeValue('gray.200', 'gray.900')}
                 align={'center'}>
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
@@ -54,10 +62,10 @@ export default function Navbar() {
                     <Text
                         textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                         fontFamily={'heading'}
-                        // color={useColorModeValue('gray.800', 'white')}
-                        >
-                        <Image src='https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg' />
-                        {/* <Image src='https://github.githubassets.com/apple-touch-icon-144x144.png' /> */}
+                        color={'white'}
+                        fontSize={'35px'}
+                    >
+                        <BsGithub />
                     </Text>
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -66,23 +74,33 @@ export default function Navbar() {
                 </Flex>
 
                 <Stack
-                    flex={{ base: 1, md: 0 }}
-                    justify={'flex-end'}
                     direction={'row'}
-                    spacing={6}>
-                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+                    spacing={10}
+                >
+                    <InputGroup>
+                        <InputLeftElement pointerEvents='none'>
+                            <SearchIcon color='gray.300' />
+                        </InputLeftElement>
+                        <Input p='1 6' type='tel' bg='transparent' placeholder='Phone number' />
+                        <InputRightElement>
+                            <BsSlashSquare color='white' />
+                        </InputRightElement>
+                    </InputGroup>
+                    <Button color={'white'} fontSize={'sm'} fontWeight={400} variant={'ghost'} href={'#'} _hover={{}}>
                         Sign In
                     </Button>
                     <Button
-                        as={'a'}
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'sm'}
                         fontWeight={600}
-                        // color={'white'}
-                        // bg={'pink.400'}
+                        color={'white'}
+                        variant={'outline'}
+                        bg={'none'}
                         href={'#'}
+                        px='6'
+                        py='5'
                         _hover={{
-                            bg: 'pink.300',
+                            bg: 'grey.300',
                         }}>
                         Sign Up
                     </Button>
@@ -97,10 +115,6 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-    // const linkColor = useColorModeValue('gray.600', 'gray.200')
-    // const linkHoverColor = useColorModeValue('gray.800', 'white')
-    //   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
-
     return (
         <Stack direction={'row'} spacing={4}>
             {NAV_ITEMS.map((navItem) => (
@@ -111,14 +125,10 @@ const DesktopNav = () => {
                                 as="a"
                                 p={2}
                                 href={navItem.href ?? '#'}
-                                fontSize={'sm'}
+                                fontSize={'16px'}
                                 fontWeight={500}
-                                // color={linkColor}
-                                // _hover={{
-                                //     textDecoration: 'none',
-                                //     color: linkHoverColor,
-                                // }}
-                                >
+                                color={'white'}
+                            >
                                 {navItem.label}
                             </Box>
                         </PopoverTrigger>
@@ -127,7 +137,7 @@ const DesktopNav = () => {
                             <PopoverContent
                                 border={0}
                                 boxShadow={'xl'}
-                                bg={'transparent'}
+                                bg={'white'}
                                 p={4}
                                 rounded={'xl'}
                                 minW={'sm'}>
@@ -154,28 +164,17 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
             display={'block'}
             p={2}
             rounded={'md'}
-            // _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
-            >
+        >
             <Stack direction={'row'} align={'center'}>
                 <Box>
                     <Text
                         transition={'all .3s ease'}
-                        _groupHover={{ color: 'pink.400' }}
+                        _groupHover={{ color: 'blue.400' }}
                         fontWeight={500}>
                         {label}
                     </Text>
                     <Text fontSize={'sm'}>{subLabel}</Text>
                 </Box>
-                <Flex
-                    transition={'all .3s ease'}
-                    transform={'translateX(-10px)'}
-                    opacity={0}
-                    _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-                    justify={'flex-end'}
-                    align={'center'}
-                    flex={1}>
-                    <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-                </Flex>
             </Stack>
         </Box>
     )
@@ -183,7 +182,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 
 const MobileNav = () => {
     return (
-        <Stack bg='transparent' p={4} display={{ md: 'none' }}>
+        <Stack bg='white' p={4} display={{ md: 'none' }}>
             {NAV_ITEMS.map((navItem) => (
                 <MobileNavItem key={navItem.label} {...navItem} />
             ))}
@@ -244,13 +243,13 @@ const NAV_ITEMS = [
         label: 'Product',
         children: [
             {
-                label: 'Explore Design Work',
-                subLabel: 'Trending Design to inspire you',
+                label: 'Actions',
+                subLabel: 'Automate any work flow',
                 href: '#',
             },
             {
-                label: 'New & Noteworthy',
-                subLabel: 'Up-and-coming Designers',
+                label: 'Packages',
+                subLabel: 'Host and manage packages',
                 href: '#',
             },
         ],

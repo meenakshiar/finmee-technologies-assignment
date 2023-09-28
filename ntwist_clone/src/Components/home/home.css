@@ -34,3 +34,20 @@
 .home__content img {
   width: 50%; /* Set the image width to 50% of its container */
 }
+@media screen and (max-width: 768px) {
+.home__content {
+  display: grid; /* Use flex display for the content */
+  grid-template-columns: repeat(1,1fr);
+  align-items: center; /* Vertically center the content */
+  gap: 6rem; /* Add spacing between child elements */
+  padding: 150px 0; /* Add padding to the top and bottom of the content */
+  font-size: 22px; /* Set the font size to 22px */
+  color: white; /* Set the text color to white */
+  line-height: 1; /* Set the line height to 1 (normal spacing between lines) */
+}
+
+.home__container {
+  width: 114%;
+  padding: 20px;
+}
+}

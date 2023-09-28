@@ -6,9 +6,11 @@ import {
 import React from 'react'
 import { BiChevronRight } from 'react-icons/bi'
 
+// HomeContent component for rendering the content of the home page
 const HomeContent = () => {
     return (
         <>
+            {/* GitHub Universe promo */}
             <Box
                 mt='32%'
                 ml='-38%'
@@ -27,7 +29,8 @@ const HomeContent = () => {
                     <Image
                         w='50px'
                         h='50px'
-                        src='https://github.githubassets.com/images/modules/site/universe/eyebrow-23@2x.png?width=44&format=webpll' />
+                        src='https://github.githubassets.com/images/modules/site/universe/eyebrow-23@2x.png?width=44&format=webpll'
+                    />
                     <Heading fontSize='16px' lineHeight='5'>
                         GitHub Universe: Dive in to AI, security, and DevEx
                         <Text fontWeight='400' color='#6e7681'>Get your tickets now to join us on Nov. 8-9.</Text>
@@ -35,6 +38,7 @@ const HomeContent = () => {
                     <BiChevronRight mt='10px' fontSize={'24px'} />
                 </Flex>
 
+                {/* Main headline */}
                 <Heading
                     color='white'
                     fontSize='80px'
@@ -52,6 +56,7 @@ const HomeContent = () => {
                     The AI-powered developer platform to build, scale, and deliver secure software.
                 </Heading>
 
+                {/* Email signup and trial buttons */}
                 <Flex gap='25px' p='30px 0'>
                     <InputGroup
                         size='lg'

@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <div className="home__container"> {/* Create a container div with a class name */}
       <div className="home__content grid"> {/* Create a content div with class names */}
-        <div>
-          <h1>
+        <div >
+          <h1 data-aos="fade-up">
             Data-powered solutions
             <br />
             for Industrial Excellence

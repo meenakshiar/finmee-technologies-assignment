@@ -25,6 +25,7 @@
   display: flex; /* Use flex display for the list */
   justify-content: center; /* Center-align the list items horizontally */
   column-gap: 1.5rem; /* Add horizontal spacing between list items */
+  list-style: none;
 }
 
 /* Styling for the social links within the footer */
@@ -63,5 +64,8 @@
 }
 
 /* For extra small devices (less than 576px) */
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
+  .footer{
+    width: 123%;
+  }
 }

@@ -7,7 +7,7 @@ import { FaBars } from 'react-icons/fa' // Import a bars icon from react-icons/f
 const Header = () => {
   // State for menu toggle
   const [Toggle, showMenu] = useState(false);
-
+console.log(Toggle)
   // State for changing header appearance on scrolling
   const [font, setFont] = useState("white");
   const [logo, setLogo] = useState('https://ntwist.com/wp-content/uploads/2021/12/ntwist-logo-dark.png')
@@ -46,7 +46,7 @@ const Header = () => {
     >
       <nav className="nav container">
         <a href="index.html" className="nav__logo">
-          <img src={logo} alt="" width="18%" />
+          <img src={logo} alt=""  />
         </a>
         <div
           style={{
@@ -54,7 +54,7 @@ const Header = () => {
           }}
           className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
             {/* Navigation options */}
-          <ul className="nav__list grid">
+          <ul className="nav__list">
             <li className="nav__item">
               HOME
             </li>
