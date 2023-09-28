@@ -1,0 +1,53 @@
+/* Styling for the scroll-to-top button */
+.scrollup {
+  position: fixed;
+  right: 2.5rem;
+  bottom: -20%;
+  background-color: #003358;
+  opacity: 0.8;
+  padding: 0.3rem 0.5rem;
+  z-index: 100;
+  transition: 0.4s;
+  border-radius: 100%;
+}
+
+/* Styling for the scroll-up icon within the button */
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Class to show the scroll-to-top button */
+.show-scroll {
+  bottom: 3rem;
+}
+
+/* Media query for large devices (max-width: 992px) */
+@media screen and (max-width: 992px) {
+  /* Adjust position and padding for large devices */
+  .scrollup {
+    right: 1.5rem;
+    padding: 0.25rem 0.4rem;
+  }
+  /* Adjust font size for the scroll-up icon */
+  .scrollup__icon {
+    font-size: 1.25rem;
+  }
+}
+
+/* Media query for medium devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Adjust position for medium devices and show the scroll-to-top button */
+  .show-scroll {
+    bottom: 4rem;
+    right: 1.5rem;
+  }
+}
+
+/* Media query for small devices (max-width: 450px) */
+@media screen and (max-width: 450px) {
+  /* Adjust position for small devices */
+  .scrollup {
+    right: 1rem;
+  }
+}

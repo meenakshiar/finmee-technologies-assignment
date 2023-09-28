@@ -1,0 +1,52 @@
+/* Styling for the entire services section */
+.service_section {
+  display: grid;
+  gap: 80px;
+  margin: 45px 0;
+}
+
+/* Styling for each service container */
+.service__container {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+/* Styling for the service images */
+.service__img {
+  width: 600px;
+  justify-self: center;
+}
+
+/* Styling for the service data */
+.service__data {
+  width: 600px;
+}
+
+/* Styling for the service titles */
+.service__data h1 {
+  font-size: 42px;
+  color: #ff3a2d;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/* Styling for the service descriptions */
+.service__data p {
+  text-align: justify;
+  line-height: 1.7;
+}
+
+/* Styling for the "Read More" buttons */
+.service__data button {
+  background-color: #ff3a2d;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

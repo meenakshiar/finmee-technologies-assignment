@@ -1,0 +1,142 @@
+/* Styling for the header */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Styling for the navigation container */
+.nav {
+  height: calc(2rem + 1rem);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+}
+
+/* Styling for the navigation list */
+.nav__list {
+  display: flex;
+  column-gap: 1.6rem;
+}
+
+/* Styling for navigation items */
+.nav__item {
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+  list-style-type: none;
+}
+
+/* Styling for the menu toggle and close icons (hidden by default) */
+.nav__close,
+.nav__toggle {
+  display: none;
+}
+
+/* Styling for the dropdown menu */
+.nav__list {
+  overflow: hidden;
+}
+
+.nav__list > li {
+  float: left;
+}
+
+.nav__list > li,
+.dropbtn {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Styling for the dropdown menu content */
+.nav__list > li .dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Styling for dropdown menu links */
+.dropdown-content a {
+  margin: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  color: #003358;
+}
+
+.dropdown-content a:hover {
+  color: black;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: grid;
+}
+
+/* Media query for responsive design (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Adjust header position and height for smaller screens */
+  .header {
+    top: initial;
+  }
+  .nav {
+    height: 3rem;
+  }
+  .nav__menu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: 0.3s;
+  }
+  .show-menu {
+    bottom: 0;
+  }
+
+  /* Adjust navigation list for smaller screens (grid layout) */
+  .nav__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .nav__close {
+    position: absolute;
+    right: 1.3rem;
+    bottom: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: rgb(21, 52, 98);
+  }
+  .nav__toggle {
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .nav__icon,
+  .nav__close,
+  .nav__toggle {
+    display: block;
+  }
+}
+/* Media query for smaller screens (max-width: 350px) */
+@media screen and (max-width: 350px) {
+  /* Adjust padding for the menu */
+  .nav__menu {
+    padding: 2rem 0.25rem 4rem;
+  }
+  /* Remove column gap in the navigation list */
+  .nav__list {
+    column-gap: 0;
+  }
+}

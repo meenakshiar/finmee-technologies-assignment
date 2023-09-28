@@ -1,0 +1,36 @@
+/* Styling for the .home__container class */
+.home__container {
+  width: 100%; /* Set the width to 100% */
+  height: 740px; /* Set the height to 740px */
+  background-image: url("https://ntwist.com/wp-content/uploads/2023/01/home-image-bg-v6.png"); /* Set a background image */
+  background-size: cover; /* Scale the background image to cover the container */
+}
+
+/* Styling for the .home__content class */
+.home__content {
+  display: flex; /* Use flex display for the content */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  gap: 6rem; /* Add spacing between child elements */
+  padding: 150px 0; /* Add padding to the top and bottom of the content */
+  font-size: 22px; /* Set the font size to 22px */
+  color: white; /* Set the text color to white */
+  line-height: 1; /* Set the line height to 1 (normal spacing between lines) */
+}
+
+/* Styling for buttons within .home__content */
+.home__content button {
+  background-color: #007aff; /* Set the background color of buttons */
+  border: none; /* Remove button border */
+  color: white; /* Set button text color to white */
+  font-size: 15px; /* Set the font size to 15px */
+  font-weight: 600; /* Set the font weight to 600 (semi-bold) */
+  padding: 0.8rem 2rem; /* Add padding to the button */
+  border-radius: 4px; /* Apply a border radius for rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styling for images within .home__content */
+.home__content img {
+  width: 50%; /* Set the image width to 50% of its container */
+}
